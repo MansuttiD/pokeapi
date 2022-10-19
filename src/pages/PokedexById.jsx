@@ -24,10 +24,6 @@ const PokedexById = () => {
         setHasError(true)
       })
   }, [])
-
-  if (hasError) {
-    return <Pokemon404 />
-  }
   
   const colorType = pokemon?.types[0].type.name
 
@@ -36,6 +32,10 @@ const PokedexById = () => {
   const handleBack = e => {
     e.preventDefault()
     navigate('/pokedex')
+  }
+
+  if (hasError) {
+    return <Pokemon404 />
   }
 
   return (
